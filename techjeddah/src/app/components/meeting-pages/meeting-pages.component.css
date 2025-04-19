@@ -1,0 +1,49 @@
+.our-work-section {
+    padding: 60px 0;
+
+     
+    color: #fff;
+  }
+  
+  .section-heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color:black;
+    margin-bottom: 40px;
+  }
+  
+  .work-item {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+  
+  .work-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .work-item .thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #333;
+  }
+  
+  .work-item .info {
+    padding: 20px 15px;
+  }
+  
+  .work-item .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  
+  .work-item .category {
+    font-size: 14px;
+    color: #ccc;
+  }
+  

@@ -1,0 +1,23 @@
+<div class="course-detail-container" *ngIf="course">
+  <div class="course-detail-card">
+    <img [src]="course.imageUrl" [alt]="course.title" class="course-image" />
+    <div class="course-info">
+      <h2>{{ course.title }}</h2>
+      <p class="description">{{ course.description }}</p>
+      <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+      <p><strong>Duration:</strong> {{ course.duration }}</p>
+      <p><strong>Level:</strong> {{ course.level }}</p>
+      <p><strong>Start Date:</strong> {{ course.startDate | date }}</p>
+      <p><strong>Price:</strong> SAR{{ course.price }}</p>
+
+      <div *ngIf="course.topics?.length">
+        <h4>Topics Covered:</h4>
+        <ul>
+          <li *ngFor="let topic of course.topics">{{ topic }}</li>
+        </ul>
+      </div>
+
+      <button class="btn btn-success mt-3" (click)="goBack()">← Back to Courses</button>
+    </div>
+  </div>
+</div>

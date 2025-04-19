@@ -1,0 +1,69 @@
+<div class="contact-container">
+  <!-- Left sidebar with contact information -->
+  <button class="close-btn" (click)="closeDialog()">×</button>
+  <div class="contact-sidebar">
+    <!-- <div class="contact-item">
+      <i class="material-icons">location_on</i>
+      <div>
+        <div class="contact-title">Address</div>
+        <div class="contact-detail">Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US</div>
+      </div>
+    </div>
+    
+    <div class="contact-item">
+      <i class="material-icons">phone</i>
+      <div>
+        <div class="contact-title">Lets Talk</div>
+        <div class="contact-detail">+1 800 1236879</div>
+      </div>
+    </div>
+    
+    <div class="contact-item">
+      <i class="material-icons">email</i>
+      <div>
+        <div class="contact-title">General Support</div>
+        <div class="contact-detail">contact us</div>
+      </div>
+    </div> -->
+  </div>
+  
+  <!-- Right side form -->
+  <div class="form-container">
+    <h2 class="form-heading">Apply for Course</h2>
+    
+    <form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input id="name" type="text" formControlName="name" required>
+        </div>
+        
+        <div class="form-field">
+          <label for="email">Email*</label>
+          <input id="email" type="email" formControlName="email" required>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-field">
+          <label for="phone">Phone*</label>
+          <input id="phone" type="tel" formControlName="phone" required>
+        </div>
+        
+        <div class="form-field">
+          <label for="interest">Interest*</label>
+          <input id="interest" type="text" formControlName="interest" required>
+        </div>
+      </div>
+      
+      <div class="form-field" style="margin-bottom: 2rem;">
+        <label for="message">Message*</label>
+        <textarea id="message" rows="3" formControlName="message" required></textarea>
+      </div>
+      
+      <div style="text-align: center;">
+        <button type="submit" class="submit-btn">SUBMIT</button>
+      </div>
+    </form>
+  </div>
+</div>
