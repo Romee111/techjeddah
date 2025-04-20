@@ -1,27 +1,17 @@
 const multer = require('multer');
 const path = require('path');
-// Set up storage engine
+
+// Specify storage configuration (e.g., store files in a "uploads" folder)
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-      const uploadPath = process.env.UPLOAD_PATH;
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
   },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname); // generating a unique filename
-  }
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
 });
 
-// Set up multer with storage and a simple file type check
-const uploads = multer({
-  storage,
-  fileFilter: (req, file, cb) => {
-    // Allow only image files
-    if (file.mimetype.startsWith('image/')) {
-      cb(null, true); // Accept the file
-    } else {
-      cb(new Error('Only image files are allowed!'), false); // Reject the file
-    }
-  }
-});
+// Set up Multer to handle single file upload for 'imageUrl'
+const uploadSingle = multer({ storage: storage }).single('imageUrl'); // 'imageUrl' is the field name
 
-// Export the upload middleware to use in routes
-module.exports = uploads;
+module.exports = { uploadSingle };

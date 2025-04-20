@@ -1,15 +1,13 @@
-// const uploads = require('../../middlewares/multer.js');
+ const uploads = require('../../middlewares/multer.js');
 const  couseController = require('../../../src/modules/course/course.controller');
 const express = require('express');
 const router = express.Router();
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
 
 
 router
 .route('/addCourse')
 .post(
-  upload.single('imageUrl'), couseController.addCourse);
+  uploads.uploadSingle('imageUrl'), couseController.addCourse);
 
 router
 .route('/getavailableCourse')   
