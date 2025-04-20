@@ -1,7 +1,7 @@
 {
     "builds": [
       {
-        "src": "src/assets/mainscreen.png",
+        "src": "src/assets/techjeddah.mp4",
         "use": "@vercel/static"
       }
     ]
