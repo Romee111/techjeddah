@@ -24,6 +24,9 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { TestominalsComponent } from './components/testominals/testominals.component';
 import { TeamComponent } from './components/team/team.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,11 +52,13 @@ import { TeamComponent } from './components/team/team.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-   MatDialogModule,
-   MatInputModule,
-   MatButtonModule,
-   BrowserAnimationsModule,
-   HttpClientModule
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RouterModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

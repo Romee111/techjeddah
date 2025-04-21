@@ -4,7 +4,7 @@
       <h2>Our Courses</h2>
     </div>
     <div class="courses-grid">
-      <div class="course-card" *ngFor="let course of visibleCourses ">
+      <div class="course-card" *ngFor="let course of visibleCourses" (click)="goToCourseDetail(course)">
         <img [src]="getCourseimage(course.title)" [alt]="course.title">
         <div class="course-content">
           <h4>{{ course.title }}</h4>

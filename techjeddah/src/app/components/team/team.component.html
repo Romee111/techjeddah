@@ -16,7 +16,7 @@
   <div class="slider-track" [style.transform]="'translateX(' + (-activeIndex * (100 / slidesToShow)) + '%)'">
     <div *ngFor="let member of teamMembers; let i = index" class="slider-slide" [ngClass]="{'visible': isSlideVisible(i)}">
       <div class="team-member-card">
-        <div class="image-container" [ngClass]="member.shape">
+        <div class="image-container" [ngClass]="[member.shape]">
           <div class="image-glow"></div>
           <div class="image-wrapper">
             <img [src]="member.image" [alt]="member.name">
