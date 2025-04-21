@@ -5,16 +5,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProjectService {
-    const taskApi='http://localhost:2300/ourServices'
-  constructor(
-    private http: HttpClient,
-  ) { }
+  private taskApi = 'http://localhost:2300/service';
+
+  constructor(private http: HttpClient) {}
 
   getProjects() {
-    return this.http.get<any>(`$({this.taskApi/'getourServices}`);')
+    return this.http.get<any>(`${this.taskApi}/getService`);
   }
 
   addProjects(project: any) {
-    return this.http.post(`${this.taskApi}/addourServices`, project);
+    return this.http.post(`${this.taskApi}/addService`, project);
   }
 }

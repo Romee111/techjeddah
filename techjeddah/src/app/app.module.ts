@@ -21,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { MissionComponent } from './components/mission/mission.component';
+import { TestominalsComponent } from './components/testominals/testominals.component';
+import { TeamComponent } from './components/team/team.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,10 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     OurSericesComponent,
     CoursedetailComponent,
     BlogsComponent,
-    AboutusComponent
+    AboutusComponent,
+    MissionComponent,
+    TestominalsComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

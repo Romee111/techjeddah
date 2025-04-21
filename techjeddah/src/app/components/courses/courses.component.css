@@ -1,52 +1,120 @@
+/* Styling for the Course Section */
 .our-courses {
-    padding: 60px 0;
-    background-color: #f8f9fa;
-  }
-  
-  .section-heading {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
+  background: fixed linear-gradient( 75deg , #610094, black);
+  padding: 50px 0;
+}
+
+.our-courses .section-heading h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color:white;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  background: fixed linear-gradient( to bottom , #610094, black);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #610094;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+.course-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.course-content h4 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color:white; 
+}
+
+.course-content p {
+  color: whitesmoke;
+    font-size: 1rem;
+  margin: 5px 0;
+}
+
+.course-content .stars {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.course-content .stars span {
+  font-size: 1.2rem;
+  color: #f39c12; /* Gold color for stars */
+}
+
+
+
+
+
+/* Button Animation for Show More/Less Courses */
+.morecourses {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.morecourses:hover {
+  background-color: #610094;
+  transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
   .courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
-  
+}
+
+@media screen and (max-width: 500px) {
   .course-card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    box-shadow: none;
   }
   
-  .course-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .course-card img {
+  .viewbtn {
     width: 100%;
-    height: auto;
   }
-  
-  .course-content {
-    padding: 20px;
-  }
-  
-  .course-content h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-  
-  .course-content p {
-    font-size: 16px;
-    color: #007bff;
-    margin-bottom: 10px;
-  }
-  
-  .stars i {
-    color: #ffc107;
-  }
-  
+}
+.viewbtn {
+  background-color :yellow;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.viewbtn:hover {
+  background-color: #c0392b;
+}

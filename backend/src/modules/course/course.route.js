@@ -1,13 +1,15 @@
- const uploads = require('../../middlewares/multer.js');
+// const formidableUpload = require('../../../src/middlewares/formidableUpload');
 const  couseController = require('../../../src/modules/course/course.controller');
 const express = require('express');
 const router = express.Router();
 
 
+
 router
 .route('/addCourse')
 .post(
-  uploads.uploadSingle('imageUrl'), couseController.addCourse);
+
+   couseController.addCourse);
 
 router
 .route('/getavailableCourse')   

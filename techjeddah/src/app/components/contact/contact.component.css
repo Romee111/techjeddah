@@ -1,0 +1,111 @@
+/* Main Contact Container */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  background: fixed linear-gradient( 75deg , #610094, black);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section - Text Content */
+.contact-text-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.contact-text-section h2 {
+  font-size: 2rem;
+  color:white;
+ 
+  margin-top: 150px ;
+}
+
+.contact-text-section p {
+  font-size: 22px;
+  color: whitesmoke;
+  margin-bottom: 10px;
+}
+
+.contact-text-section a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.contact-text-section a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  margin-right: 10px;
+  color: whitesmoke;
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 5px;  
+}
+
+.social-links a:hover {
+  color:#eb34f5;
+}
+
+/* Right Section - Contact Form */
+.contact-form-section {
+  flex: 1;
+  padding: 20px;
+  background: fixed linear-gradient( to Left , #610094, black);
+  border-radius: 28px;
+  margin-top: 100px; 
+  width: 70% ;
+  
+  box-shadow: 0 4px 12px #610094;
+}
+
+.contact-form-section h2 {
+  font-size: 2rem;
+  color:#610094;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 3px solid #610094;
+  width: 80%;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 70px;
+}
+
+.contact-form-section button {
+  background-color: #610094;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 20%;
+  justify-items: space-around;
+  margin-left: 40%;
+  align-self: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px #610094;
+}
+
+.contact-form-section button:hover {
+  background-color: white;
+  color: #610094;
+
+
+}

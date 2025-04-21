@@ -4,22 +4,31 @@
       <h2>Our Courses</h2>
     </div>
     <div class="courses-grid">
-      <div class="course-card" *ngFor="let course of courses">
-        <img [src]="course.imageUrl" [alt]="course.title">
+      <div class="course-card" *ngFor="let course of visibleCourses ">
+        <img [src]="getCourseimage(course.title)" [alt]="course.title">
         <div class="course-content">
           <h4>{{ course.title }}</h4>
-          <p>SAR{{ course.price }}</p>
+          <p>{{ course.description }}</p>
+          <!-- <p>Instructor: {{ course.instructor }}</p>
+          <p>Start Date: {{ getUpdatedStartDate(course.startDate, course.duration) }}</p> -->
+
           <div class="stars">
             <!-- star rating optional -->
           </div>
 
           <!-- ✅ Moved button inside the content box -->
-          <button (click)="goToCourseDetail(course._id)" class="btn btn-primary mt-2">
-            View Course
-          </button>
+          <!-- <button " class="viewbtn mt-2"> -->
+            <!-- View Course
+          </button> -->
 
         </div>
       </div>
     </div>
   </div>
+  <div class="text-center mt-4">
+    <button class="morecourses" (click)="toggleCourses()">
+      {{ showAllCourses ? 'Show Less' : 'More Courses' }}
+    </button>
+  </div>
+  
 </section>

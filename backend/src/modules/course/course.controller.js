@@ -1,22 +1,72 @@
 const courseSchema  = require('../../../models/courses.model'); 
 
 
+// const addCourse = async (req, res) => {
+//     try {
+//       const {
+//         title,
+//         description,
+//         instructor,
+//         duration,
+//         level,
+//         topics,
+//         price,
+//         startDate
+//       } = req.body;
+  
+//       // Convert duration to weeks or days (assume weeks here)
+//       const parsedDuration = parseInt(duration); // e.g., "10 weeks"
+//       const start = new Date(startDate);
+//       const now = new Date();
+  
+//       // Calculate course end date
+//       const endDate = new Date(start);
+//       endDate.setDate(start.getDate() + parsedDuration * 7); // assuming weeks
+  
+//       // If course has ended, reset startDate to today
+//       const finalStartDate = endDate < now ? now : start;
+  
+//       const course = await courseSchema.create({
+//         title,
+//         description,
+//         instructor,
+//         duration: parsedDuration,
+//         level,
+//         topics: Array.isArray(topics) ? topics : topics?.split(','),
+//         price,
+//         startDate: finalStartDate,
+//       });
+  
+//       res.status(200).json({ course });
+//     } catch (error) {
+//       res.status(500).json({ error: error.message });
+//     }
+//   };
+  
 const addCourse = async (req, res) => {
     try {
-      const { title, description, instructor, duration, level, topics, price, startDate } = req.body;
+      const {
+        title, description, instructor, duration, level,
+        topics, price, startDate
+      } = req.body;
   
-      const imageUrl = req.file ? req.file.path : '';
+      const parsedDuration = parseInt(duration);
+      const start = new Date(startDate);
+      const now = new Date();
+      const endDate = new Date(start);
+      endDate.setDate(start.getDate() + parsedDuration * 7);
+      const finalStartDate = endDate < now ? now : start;
   
       const course = await courseSchema.create({
         title,
         description,
         instructor,
-        duration,
+        duration: parsedDuration,
         level,
         topics: Array.isArray(topics) ? topics : topics?.split(','),
         price,
-        startDate,
-        imageUrl,
+        startDate: finalStartDate,
+        file: req.uploadedFilePath, // 🔥 file path from middleware
       });
   
       res.status(200).json({ course });
@@ -24,6 +74,8 @@ const addCourse = async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   };
+  
+
 const getavailableCourse = async (req, res) => {
     try {
         const course = await courseSchema.find({ startDate: { $gte: new Date() } });

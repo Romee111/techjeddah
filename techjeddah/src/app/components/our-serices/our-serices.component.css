@@ -1,7 +1,7 @@
 .services {
     margin-top: -130px;
     padding: 60px 0;
-    
+            
     width: 100%;
     position: relative;
   }
@@ -20,9 +20,10 @@
   }
   
   .services .item {
-    background-color: #fff;
+    /* background-color: #e3d7f5; */
+    background: fixed linear-gradient( to bottom , #610094,black);
     border-radius: 20px;
-    color: red;
+    color:white;
     padding: 30px;
     min-width: 250px;
     flex: 1;
@@ -49,10 +50,11 @@
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 700;
+    color:white ;
   }
   
   .services .item p {
-    color: #777;
+    color: whitesmoke;
     font-size: 14px;
     line-height: 1.6;
   }

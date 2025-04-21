@@ -1,0 +1,308 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #610094, black);
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .slider-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: 10;
+  }
+  
+  .control-button {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #610094, black); ;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .control-button:hover {
+    background-color: #610094;
+  }
+  
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+  }
+  
+  @media (max-width: 767px) {
+    .slider-slide {
+      min-width: 100%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .slider-slide {
+      min-width: calc(100% / 3);
+    }
+  }
+  
+  .slider-slide {
+    padding: 0 0.5rem;
+    transition: opacity 0.5s ease;
+  }
+  
+  .slider-slide.visible {
+    opacity: 1;
+  }
+  
+  .slider-slide:not(.visible) {
+    opacity: 0.6;
+  }
+  
+  .team-member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color:linear-gradient(135deg, #610094, black);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    width: 120px;
+    height: 120px;
+  }
+  
+  @media (max-width: 767px) {
+    .image-container {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  .image-container.circle {
+    border-radius: 50%;
+  }
+  
+  .image-container.circle .image-wrapper,
+  .image-container.circle .image-glow {
+    border-radius: 50%;
+  }
+  
+  .image-container.hexagon {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
+  .image-container.hexagon .image-wrapper,
+  .image-container.hexagon .image-glow {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
+  .image-container.square {
+    border-radius: 15%;
+  }
+  
+  .image-container.square .image-wrapper,
+  .image-container.square .image-glow {
+    border-radius: 15%;
+  }
+  
+  .image-container.diamond {
+    transform: rotate(45deg);
+  }
+  
+  .image-container.diamond .image-wrapper {
+    transform: rotate(-45deg);
+  }
+  
+  .image-container.diamond img {
+    transform: rotate(0deg) scale(1.4);
+  }
+  
+  .image-glow {
+    position: absolute;
+    inset: -5px;
+    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+    filter: blur(10px);
+    opacity: 0.7;
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .member-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  @media (max-width: 767px) {
+    .member-name {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .member-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  @media (max-width: 767px) {
+    .member-title {
+      font-size: 1.125rem;
+    }
+  }
+  
+  .member-experience {
+    font-size: 0.875rem;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 767px) {
+    .member-experience {
+      font-size: 1rem;
+    }
+  }
+  
+  .profile-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 767px) {
+    .profile-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+  
+  .profile-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-button .linkedin-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(90deg,#610094, black);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: white;
+    transform: scale(1.2);
+  }
+  
+  .dot:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .control-button {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #610094, black);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .control-button:hover {
+    background-color: black;
+  }
+  
+  .control-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .profile-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    background: linear-gradient(90deg,#610094, black);
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .profile-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }

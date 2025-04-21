@@ -1,1 +1,31 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <!-- Left Section: Text Content -->
+  <div class="contact-text-section">
+    <h2>Get in Touch with Tech Jeddah</h2>
+    <p>We’d love to hear from you. Whether you have a question about our services, pricing, or anything else — our team is ready to answer all your questions.</p>
+    <p><strong>Email:</strong> <a href="mailto:info@techjeddah.com">connect.techjeddah.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+923187101450">+966 599 68773 </a></p>
+    <p><strong>Location:</strong> azzizyah, Saudi Arabia</p>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/company/techjeddah" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/techjeddah" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/TechJeddah" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/+923187101450" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <!-- Right Section: Contact Form -->
+  <div class="contact-form-section">
+    <h2>Send Us a Message</h2>
+    <form (submit)="sendEmail(); $event.preventDefault()">
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Your Name" required />
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Your Email" required />
+      <input type="text" [(ngModel)]="phone" name="phone" placeholder="Your Phone" required />
+      <input type="text" [(ngModel)]="interest" name="interest" placeholder="Area of Interest" required />
+      <textarea [(ngModel)]="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      
+    </form>
+    <button type="submit">Send</button>
+  </div>
+</div>

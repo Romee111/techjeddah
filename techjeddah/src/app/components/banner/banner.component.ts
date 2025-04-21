@@ -5,14 +5,14 @@ import { Component,ViewChild,ElementRef, AfterViewInit } from '@angular/core';
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.css']
 })
-export class BannerComponent implements AfterViewInit {
-  @ViewChild('bgVideo')
-  bgVideo!: ElementRef;
+export class BannerComponent  {
+  // @ViewChild('bgVideo')
+  // bgVideo!: ElementRef;
 
-  ngAfterViewInit() {
-    const videoElement: HTMLVideoElement = this.bgVideo.nativeElement;
-    videoElement.muted = true; // Mute the video after the view is initialized
-  }
+  // ngAfterViewInit() {
+  //   const videoElement: HTMLVideoElement = this.bgVideo.nativeElement;
+  //   videoElement.muted = true; // Mute the video after the view is initialized
+  // }
 }
 
 
