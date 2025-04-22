@@ -21,10 +21,8 @@ export class CourseService implements  OnInit {
 
   getCourseById(_id: string): Observable<Course> {
     return this.http.get<{ course: Course }>(`${this.apiUrl}/getCourse/${_id}`).pipe(
-      map(response => response.course)  // Extract the 'course' object from the response
-     
-       
+      map(response => response.course)
     );
-  }
+}
 }
 

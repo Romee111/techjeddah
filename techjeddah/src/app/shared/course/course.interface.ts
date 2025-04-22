@@ -1,6 +1,8 @@
 // src/app/shared/course.interface.ts
 
 export interface Course {
+_id: string;
+    
     course: any;
     id: string;
     title: string;
@@ -11,7 +13,11 @@ export interface Course {
     instructor: string;
     duration: string;
     level: string;
-    startDate: Date;
+    startDate: string;
     topics: string[];
+    category: string;
+    instruct_type: string;
+    experience: string;
+    icon: string;
   }
   

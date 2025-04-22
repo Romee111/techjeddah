@@ -17,8 +17,8 @@ export class ContactComponent {
 
   sendEmail() {
     const serviceID = 'service_8enmtt7';
-    const templateID = 'template_2b0mzja';
-    const publicKey =' 50QINWXbfpEwHTXRT';
+    const templateID = 'template_0i4sk1f';
+    const publicKey ='-o1sW7J49jJCHUsgl';
 
     const templateParams = {
       from_name: this.name,

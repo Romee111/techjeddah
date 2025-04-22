@@ -1,39 +1,74 @@
-import { Component, OnInit } from '@angular/core';
-import { CourseService } from 'src/app/shared/course.service';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Course } from 'src/app/shared/course/course.interface';
+import { Course } from '../../shared/course/course.interface';
+import { CourseService } from 'src/app/shared/course.service';
 
 @Component({
   selector: 'app-coursedetail',
   templateUrl: './coursedetail.component.html',
   styleUrls: ['./coursedetail.component.css']
 })
-export class CoursedetailComponent implements OnInit {
-  course!:Course;
+export class CoursedetailComponent {
+  course!: Course | undefined;
+  isLoading = true;
+  errorMsg: string | null = null;
+instruct_type: any;
 
   constructor(
+    private route: ActivatedRoute,
     private courseService: CourseService,
-    private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    const courseId = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log('Navigating to course with ID:', courseId);
-    if (courseId) {
-      this.courseService.getCourseById(courseId).subscribe({
-        next: (course) => {
-          console.log('Received course:', course);
-          this.course = course;
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.courseService.getCourseById(id).subscribe({
+        next: (courseData) => {
+          this.course = courseData;
+          this.isLoading = false;
         },
-        error: (err) => {
-          console.error('Error loading course:', err);
+        error: (error) => {
+          this.errorMsg = 'Course not found or failed to load.';
+          this.isLoading = false;
         }
       });
+    } else {
+      this.errorMsg = 'No course ID provided in URL.';
+      this.isLoading = false;
     }
   }
 
-  goBack() {
-    this.router.navigate(['/courses']);
+  backToList() {
+    window.history.back();
   }
+
+  downloadOutline() {
+    if (this.course?.title) {
+      const fileName = `${this.course.title}.pdf`;
+      const filePath = `assets/outlines/${fileName}`; // You place PDFs inside /assets/outlines/
+
+      const link = document.createElement('a');
+      link.href = filePath;
+      link.download = fileName;
+      link.click();
+    }
+  }
+  ViewCourse(courseId: string): void {
+    this.router.navigate(['/view-course', courseId]);
+  }
+  getInstructorImage(instructor: string): string {
+    const lowerName = instructor.toLowerCase();
+  
+    if (lowerName.includes('Sohaib Romee')) {
+      return 'assets/CEO.jpg';
+    } else if (lowerName.includes('sarah')) {
+      return 'assets/instructors/sarah.jpg';
+    } else if (lowerName.includes('sohaib')) {
+      return 'assets/instructors/sohaib.jpg';
+    } else {
+      return 'assets/instructors/default.jpg'; // fallback image
+    }
+  }
+  
 }

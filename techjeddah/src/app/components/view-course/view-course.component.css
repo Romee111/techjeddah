@@ -1,0 +1,53 @@
+.course-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .course-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: #333333;
+  }
+  
+  .course-meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .meta-item {
+    font-size: 1rem;
+    color: #555555;
+  }
+  
+  .enrolled {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #777777;
+    margin-bottom: 20px;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .action-row button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .course-meta {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+  

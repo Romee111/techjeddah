@@ -59,3 +59,12 @@
     line-height: 1.6;
   }
   
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .scroll-snap-x .item {
+    scroll-snap-align: start;
+  }
+  

@@ -1,23 +1,77 @@
-<div class="course-detail-container" *ngIf="course">
-  <div class="course-detail-card">
-    <img [src]="course.imageUrl" [alt]="course.title" class="course-image" />
-    <div class="course-info">
-      <h2>{{ course.title }}</h2>
-      <p class="description">{{ course.description }}</p>
-      <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+<div class="course-container">
+  <!-- Loading and Error Messages -->
+  <div *ngIf="isLoading" class="loading">Loading...</div>
+  <div *ngIf="errorMsg" class="error-message">{{ errorMsg }}</div>
+
+  <!-- Course Details Section -->
+  <div *ngIf="course && !isLoading" class="course-detail">
+    <!-- Course Title -->
+    <h2>{{ course.title }}</h2>
+
+    <!-- Course Description and Info -->
+    <div class="course-detail-info">
+      <p>{{ course.description }}</p>
       <p><strong>Duration:</strong> {{ course.duration }}</p>
       <p><strong>Level:</strong> {{ course.level }}</p>
-      <p><strong>Start Date:</strong> {{ course.startDate | date }}</p>
-      <p><strong>Price:</strong> SAR{{ course.price }}</p>
+    </div>
 
-      <div *ngIf="course.topics?.length">
-        <h4>Topics Covered:</h4>
-        <ul>
-          <li *ngFor="let topic of course.topics">{{ topic }}</li>
-        </ul>
+    <!-- Buttons: Download Outline & View Course -->
+    <div class="course-detail-buttons">
+      <button (click)="downloadOutline()">Download Course Outline (PDF)</button>
+      <button (click)="ViewCourse(course._id)">View Course</button>
+    </div>
+
+    <!-- Instructor Section -->
+    <div class="instructor-section">
+      <h2>Your Instructor</h2>
+      <div class="instructor-profile">
+        <div class="instructor-avatar">
+          <!-- Profile Picture -->
+          <img [src]="getInstructorImage(course.instructor)" alt="Instructor Avatar">
+        </div>
+        <div class="instructor-info">
+          <!-- Instructor Name, Type, Experience -->
+     
+          <p class="instructor-title">{{ course.instructor }}</p>
+          <p class="instructor-experience">{{ course.experience }}</p>
+          <!-- LinkedIn Profile Link -->
+          <!-- <a href="{{ course.instructor.linkedin }}" class="linkedin-link" target="_blank">
+            View LinkedIn Profile <i class="linkedin-icon"></i>
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Course Content: What You'll Learn -->
+    <div class="course-content">
+      <div class="learning-section">
+        <h2>What You'll Learn</h2>
+        <div class="topics-grid">
+          <div *ngFor="let topic of course.topics" class="topic-item">
+            <div class="topic-bullet"></div>
+            <span>{{ topic }}</span>
+          </div>
+        </div>
       </div>
 
-      <button class="btn btn-success mt-3" (click)="goBack()">← Back to Courses</button>
+      <!-- Course Features Section (currently commented out in your original code) -->
+      <div class="features-section">
+        <h2>Course Features</h2>
+        <!-- Uncomment and fill in the feature section if needed -->
+        <!-- <div class="features-grid">
+          <div *ngFor="let feature of course.features" class="feature-item">
+            <div class="check-icon"></div>
+            <span>{{ feature }}</span>
+          </div>
+        </div> -->
+      </div>
     </div>
+
+    <!-- Course Title Section (commented out) -->
+    <!--
+    <div class="course-title-section" *ngIf="showDetails">
+      Add your content here if required.
+    </div>
+    -->
   </div>
 </div>

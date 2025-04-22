@@ -26,6 +26,7 @@ import { TestominalsComponent } from './components/testominals/testominals.compo
 import { TeamComponent } from './components/team/team.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ViewCourseComponent } from './components/view-course/view-course.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CommonModule } from '@angular/common';
     AboutusComponent,
     MissionComponent,
     TestominalsComponent,
-    TeamComponent
+    TeamComponent,
+    ViewCourseComponent
   ],
   imports: [
     BrowserModule,

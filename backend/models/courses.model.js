@@ -3,6 +3,8 @@ const courseSchema = new mongoose.Schema({
     title: { type: String,  },
     description: { type: String,  },
     instructor: { type: String, },
+    instruct_type: { type: String },
+    experience: { type: String },
     duration: { type: String },
     level: { type: String },
     topics: [String],
