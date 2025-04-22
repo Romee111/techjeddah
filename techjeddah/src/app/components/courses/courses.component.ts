@@ -40,6 +40,7 @@ export class CoursesComponent implements OnInit {
       'YouTube Automation Mastery': 'assets/youtubeautomation.jpeg',
       'Social Media Marketing ': 'assets/socialmediamarketing.jpeg',
       'Advanced React': 'assets/advancedRedux.jpeg',
+      'Programming Fundementals' :'assets/programmingfundemental.png'
     };
 
     const image = imageMap[title];

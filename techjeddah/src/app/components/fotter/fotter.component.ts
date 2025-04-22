@@ -8,4 +8,17 @@ import { Component } from '@angular/core';
 
 export class FotterComponent {
   currentYear = new Date().getFullYear();
+  // Footer data that could be moved to a service if needed
+  quickLinks = [
+    { text: 'About Us', url: '/about' },
+    { text: 'Courses', url: '/courses' },
+    { text: 'Mentors', url: '/mentors' }
+  ];
+
+  socialLinks = [
+    { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/tech-jeddah-9a6192361/' },
+    { icon: 'fab fa-instagram', url: 'https://www.instagram.com/techjeddah/?hl=en' },
+    { icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/profile.php?id=61575250259723' },
+    { icon: 'fab fa-whatsapp', url: 'https://web.whatsapp.com/' }
+  ];
 }

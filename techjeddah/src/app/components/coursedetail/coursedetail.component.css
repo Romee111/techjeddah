@@ -29,6 +29,9 @@
   font-size: 2rem;
   color: #ffffff;
   margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold ;
+  margin-top: 05%; 
 }
 
 .course-detail-info p {
@@ -60,9 +63,8 @@
 }
 
 .course-detail-buttons button:first-child {
-  background-color: transparent;
-  border: 2px solid #6366f1;
-  color: #6366f1;
+  background:linear-gradient(75deg, #610094, black);
+  color: whitesmoke;
 }
 
 .course-detail-buttons button:first-child:hover {
@@ -70,7 +72,7 @@
 }
 
 .course-detail-buttons button:last-child {
-  background-color: #6366f1;
+  background:linear-gradient( 75deg, #610094, black);
   color: white;
 }
 

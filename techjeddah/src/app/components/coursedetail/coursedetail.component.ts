@@ -58,10 +58,10 @@ instruct_type: any;
     this.router.navigate(['/view-course', courseId]);
   }
   getInstructorImage(instructor: string): string {
-    const lowerName = instructor.toLowerCase();
+    const lowerName = instructor.toLowerCase().trim();  // remove spaces around
   
-    if (lowerName.includes('Sohaib Romee')) {
-      return 'assets/CEO.jpg';
+    if (lowerName.includes('sohaib romee')) {
+      return 'assets/instructors/SohaibRomee.jpg';
     } else if (lowerName.includes('sarah')) {
       return 'assets/instructors/sarah.jpg';
     } else if (lowerName.includes('sohaib')) {
@@ -70,5 +70,6 @@ instruct_type: any;
       return 'assets/instructors/default.jpg'; // fallback image
     }
   }
+  
   
 }
