@@ -9,11 +9,7 @@ import { Component } from '@angular/core';
 export class FotterComponent {
   currentYear = new Date().getFullYear();
   // Footer data that could be moved to a service if needed
-  quickLinks = [
-    { text: 'About Us', url: '/about' },
-    { text: 'Courses', url: '/courses' },
-    { text: 'Mentors', url: '/mentors' }
-  ];
+
 
   socialLinks = [
     { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/tech-jeddah-9a6192361/' },

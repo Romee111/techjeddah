@@ -8,6 +8,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ViewCourseComponent } from './components/view-course/view-course.component';
+import { TeamComponent } from './components/team/team.component';
 
 const routes: Routes = [
   { path: '',  component:HomeComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'contact',  component:ContactComponent },
   {path: 'coursedetail/:id', component: CoursedetailComponent },
   {path:'about-us', component: AboutusComponent},
-  {path:'view-course/:id', component: ViewCourseComponent}
+  {path:'view-course/:id', component: ViewCourseComponent},
+  {path:'team', component: TeamComponent}
 
 
 ];

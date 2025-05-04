@@ -5,7 +5,7 @@
     </div>
     <div class="courses-grid">
       <div class="course-card" *ngFor="let course of visibleCourses" (click)="goToCourseDetail(course._id)">
-        <img [src]="getCourseimage(course.title)" [alt]="course.title">
+        <img [src]="baseUrl + course.imageUrl" [alt]="course.title">
         <div class="course-content">
           <h4>{{ course.title }}</h4>
           <p>{{ course.description }}</p>

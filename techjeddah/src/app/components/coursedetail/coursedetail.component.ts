@@ -13,6 +13,7 @@ export class CoursedetailComponent {
   isLoading = true;
   errorMsg: string | null = null;
 instruct_type: any;
+baseUrl:string = 'http://localhost:8000';
 
   constructor(
     private route: ActivatedRoute,
@@ -24,8 +25,9 @@ instruct_type: any;
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.courseService.getCourseById(id).subscribe({
-        next: (courseData) => {
-          this.course = courseData;
+        next: (response) => {
+          this.course = response;
+          console.log(this.course);
           this.isLoading = false;
         },
         error: (error) => {

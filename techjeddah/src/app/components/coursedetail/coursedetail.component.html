@@ -6,13 +6,14 @@
   <!-- Course Details Section -->
   <div *ngIf="course && !isLoading" class="course-detail">
     <!-- Course Title -->
+     <img [src]="baseUrl +  course?.imageUrl" alt="" srcset="">
     <h2>{{ course.title }}</h2>
 
     <!-- Course Description and Info -->
     <div class="course-detail-info">
       <p>{{ course.description }}</p>
       <p><strong>Duration:</strong> {{ course.duration }}</p>
-      <p><strong>Level:</strong> {{ course.level }}</p>
+      <!-- <p><strong>Level:</strong> {{ course.level }}</p> -->
     </div>
 
     <!-- Buttons: Download Outline & View Course -->
@@ -47,9 +48,10 @@
       <div class="learning-section">
         <h2>What You'll Learn</h2>
         <div class="topics-grid">
-          <div *ngFor="let topic of course.topics" class="topic-item">
-            <div class="topic-bullet"></div>
-            <span>{{ topic }}</span>
+            <div class="syllabus">
+              <li>{{ course.syllabus }}</li>
+
+            </div>
           </div>
         </div>
       </div>

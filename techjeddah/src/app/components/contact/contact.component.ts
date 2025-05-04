@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ContactService } from '../../shared/contact/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,44 +13,25 @@ export class ContactComponent {
   interest = '';
   message = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private contactService: ContactService) {}
 
   sendEmail() {
-    const serviceID = 'service_8enmtt7';
-    const templateID = 'template_0i4sk1f';
-    const publicKey ='-o1sW7J49jJCHUsgl';
-
-    const templateParams = {
-      from_name: this.name,
+    const contactData = {
+      name: this.name,
       email: this.email,
-      phone: this.phone,
-      interest: this.interest,
-      message: this.message
+      message: this.message,
+      yourFieldOfInterest: this.interest
     };
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-
-    this.http.post('https://api.emailjs.com/api/v1.0/email/send', {
-      service_id: serviceID,
-      template_id: templateID,
-      user_id: publicKey,
-      template_params: templateParams
-    }, { headers }).subscribe({
-      next: () => {
-        alert('✅ Message sent successfully!');
-        this.name = '';
-        this.email = '';
-        this.phone = '';
-        this.interest = '';
-        this.message = '';
+    this.contactService.addContact(contactData).subscribe({
+      next: (res: any) => {
+        alert('Message sent successfully');
+        this.name = this.email = this.phone = this.interest = this.message = '';
       },
       error: (err) => {
-        console.error('Email send error:', err);
-        alert('❌ Failed to send message.');
+        alert('Failed to send message.');
+        console.error(err);
       }
     });
   }
 }
-

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class CoursesComponent implements OnInit {
   courses: any[] = [];
   showAllCourses = false;
+  baseUrl = 'http://localhost:8000';
 
   constructor(
     private http: HttpClient,
@@ -19,7 +20,7 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.courseService.getCourses().subscribe((data) => {
-      this.courses = data.course;
+      this.courses = data;
       console.log(this.courses);
     });
   }

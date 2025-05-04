@@ -5,6 +5,7 @@ _id: string;
     
     course: any;
     id: string;
+    syllabus: string;
     title: string;
     description: string;
     imageUrl: string;
@@ -19,5 +20,6 @@ _id: string;
     instruct_type: string;
     experience: string;
     icon: string;
+  
   }
   

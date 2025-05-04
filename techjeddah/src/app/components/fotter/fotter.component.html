@@ -16,10 +16,21 @@
       <div class="quick-links">
         <h4>QUICK LINKS</h4>
         <ul>
-          <li *ngFor="let link of quickLinks">
-            <i class="fas fa-chevron-right"></i>
-            <a [routerLink]="link.url">{{ link.text }}</a>
-          </li>
+          <ul>
+            <li>
+              <i class="fas fa-chevron-right"></i>
+              <a href="/about-us">About</a>
+            </li>
+            <li>
+              <i class="fas fa-chevron-right"></i>
+              <a href="/courses">Courses</a>
+            </li>
+            <li>
+              <i class="fas fa-chevron-right"></i>
+              <a href="team">Mentors</a>
+            </li>
+            <!-- Add more links as needed -->
+          </ul>
         </ul>
       </div>
 
