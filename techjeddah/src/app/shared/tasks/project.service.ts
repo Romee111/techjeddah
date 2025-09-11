@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProjectService {
-  private taskApi = 'http://localhost:2300/service';
+  private taskApi = 'http://localhost:8000/service';
 
   constructor(private http: HttpClient) {}
 
