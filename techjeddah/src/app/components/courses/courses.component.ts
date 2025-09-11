@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class CoursesComponent implements OnInit {
   courses: any[] = [];
   showAllCourses = false;
-  baseUrl = 'http://localhost:8000';
+  // baseUrl = 'http://localhost:8000';
 
   constructor(
     private http: HttpClient,

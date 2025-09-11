@@ -8,8 +8,8 @@ import { Course } from './course/course.interface';
 export class CourseService implements  OnInit {
    
 
-    // private apiUrl = 'https://techjeddah-bmat.vercel.app/course';
-    private apiUrl = 'http://localhost:8000/course';
+    private apiUrl = 'https://techjeddah-bmat.vercel.app/course';
+    // private apiUrl = 'http://localhost:8000/course';
 
   constructor(private http: HttpClient) {}
 
