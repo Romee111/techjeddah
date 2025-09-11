@@ -12,6 +12,10 @@ router
    couseController.addCourse);
 
 router
+.route('/getAllCourses')   
+.get(couseController.getAllCourse);
+
+router
 .route('/getavailableCourse')   
 .get(couseController.getavailableCourse);
 

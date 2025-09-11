@@ -76,10 +76,18 @@ const addCourse = async (req, res) => {
   };
   
 
+const getAllCourse = async (req, res) => {
+    try {
+        const allcourse = await courseSchema.find();
+        res.status(200).json({ allcourse });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
 const getavailableCourse = async (req, res) => {
     try {
         const course = await courseSchema.find({ startDate: { $gte: new Date() } });
-        res.status(200).json({ course });
+        res.status(200).json({ course});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -115,4 +123,4 @@ const updateCourse = async (req, res) => {
     }
 }
 
-module.exports = { getavailableCourse, addCourse, deleteCourse, updateCourse, getCourseById };
+module.exports = { getavailableCourse, addCourse, deleteCourse, updateCourse, getCourseById, getAllCourse };

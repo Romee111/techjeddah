@@ -20,13 +20,12 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.courseService.getCourses().subscribe((data) => {
-      this.courses = data;
-      console.log(this.courses);
+      this.courses = data.allcourse;
     });
   }
 
   get visibleCourses() {
-    return this.showAllCourses ? this.courses : this.courses.slice(0, 4);
+    return this.showAllCourses ? this.courses : Array.isArray(this.courses) ? this.courses.slice(0, 4) : [];
   }
 
   toggleCourses(): void {
