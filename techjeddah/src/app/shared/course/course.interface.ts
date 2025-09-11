@@ -20,6 +20,7 @@ _id: string;
     instruct_type: string;
     experience: string;
     icon: string;
+    instructorLinkedId: string;
   
   }
   

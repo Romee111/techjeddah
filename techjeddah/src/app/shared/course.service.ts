@@ -8,7 +8,7 @@ import { Course } from './course/course.interface';
 export class CourseService implements  OnInit {
    
 
-    private apiUrl = 'http://localhost:8000/courses';
+    private apiUrl = 'https://techjeddah-p4nz.vercel.app/course';
 
   constructor(private http: HttpClient) {}
   ngOnInit(): void {
