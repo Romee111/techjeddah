@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class CoursesComponent implements OnInit {
   courses: any[] = [];
   showAllCourses = false;
-  // baseUrl = 'http://localhost:8000';
+   baseUrl = 'https://techjeddah-bmat.vercel.app/course';
 
   constructor(
     private http: HttpClient,
@@ -19,7 +19,7 @@ export class CoursesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.courseService.getCourses().subscribe((data) => {
+    this.courseService.getCourses('_id').subscribe((data) => {
       this.courses = data.allcourse;
     });
   }

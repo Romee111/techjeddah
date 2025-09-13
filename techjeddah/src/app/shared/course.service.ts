@@ -17,17 +17,19 @@ export class CourseService implements  OnInit {
     throw new Error('Method not implemented.');
   }
 
-  getCourses(): Observable<any> {
+  getCourses(_id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/getAllCourses`);
   }
 
   getCourseById(_id: string): Observable<Course> {
     return this.http.get<{
-      data: any; course: Course 
+      course: Course ,
 }>(`${this.apiUrl}/getCourse/${_id}`).pipe(
-      map(response => response.data)
+  
+      map(response => response.course)
       
     );
+    
 }
 }
 

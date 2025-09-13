@@ -13,7 +13,7 @@ export class CoursedetailComponent {
   isLoading = true;
   errorMsg: string | null = null;
 instruct_type: any;
-baseUrl:string = 'http://localhost:8000';
+baseUrl:string = 'https://techjeddah-bmat.vercel.app/course';
 
   constructor(
     private route: ActivatedRoute,
@@ -23,10 +23,11 @@ baseUrl:string = 'http://localhost:8000';
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
+     console.log(id);
     if (id) {
       this.courseService.getCourseById(id).subscribe({
-        next: (response) => {
-          this.course = response;
+        next: (course) => {
+          this.course = course;
           console.log('hello ',this.course);
           this.isLoading = false;
         },
