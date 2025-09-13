@@ -27,7 +27,7 @@ baseUrl:string = 'http://localhost:8000';
       this.courseService.getCourseById(id).subscribe({
         next: (response) => {
           this.course = response;
-          console.log(this.course);
+          console.log('hello ',this.course);
           this.isLoading = false;
         },
         error: (error) => {
