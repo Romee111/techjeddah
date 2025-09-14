@@ -27,6 +27,7 @@ import { TeamComponent } from './components/team/team.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ViewCourseComponent } from './components/view-course/view-course.component';
+import { A11yModule } from "@angular/cdk/a11y";
 
 @NgModule({
   declarations: [
@@ -60,8 +61,9 @@ import { ViewCourseComponent } from './components/view-course/view-course.compon
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule,
-    CommonModule
-  ],
+    CommonModule,
+    A11yModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })

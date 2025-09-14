@@ -5,7 +5,9 @@ const contactSchema = new mongoose.Schema({
     email: { type: String, required: true },
     subject: { type: String },
     message: { type: String, required: true },
+    contactNo: { type: String },
     isResolved: { type: Boolean, default: false }
   }, { timestamps: true });
   
-  export const Contact = mongoose.model('Contact', contactSchema);
+  module.exports = mongoose.model('Contact', contactSchema);
+  

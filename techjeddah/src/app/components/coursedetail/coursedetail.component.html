@@ -49,7 +49,9 @@
         <h2>What You'll Learn</h2>
         <div class="topics-grid">
             <div class="syllabus">
-              <li>{{ course.syllabus }}</li>
+              <li *ngFor="let topic of course.topics"> {{ topic }}</li>
+              
+              
 
             </div>
           </div>

@@ -1,4 +1,5 @@
-/* ===== Logo Styles ===== */
+/* ===== General Styles ===== */
+/* These styles apply to all screen sizes */
 .nav-logo {
   height: 60px;
   margin-right: 1rem;
@@ -14,9 +15,8 @@
   text-decoration: none;
 }
 
-/* ===== Header Container ===== */
 .header-area {
-  background-color:black;
+  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,11 +36,12 @@
   color: #000 !important;
 }
 
-/* ===== Nav Menu ===== */
 .main-nav .nav {
   margin: 0;
   padding: 0;
   list-style: none;
+  /* Resetting flex properties that might be set elsewhere */
+  display: block; 
 }
 
 .main-nav .nav li {
@@ -60,7 +61,7 @@
 
 .main-nav .nav li:hover a,
 .main-nav .nav li a.active {
-  color:#610094;
+  color: #610094;
 }
 
 /* ===== Dropdown Menu ===== */
@@ -96,7 +97,15 @@
   padding-left: 25px;
 }
 
-/* ===== Mobile Menu Trigger ===== */
+/* ===== Mobile-Specific Styles ===== */
+
+/* Hide the main nav by default on mobile */
+.main-nav .nav {
+  display: none;
+  /* Add mobile menu styling here if needed */
+}
+
+/* Make the trigger button visible on mobile */
 .menu-trigger {
   display: block;
   cursor: pointer;
@@ -107,7 +116,35 @@
   border: none;
 }
 
+/* Show the menu when the 'active' class is present on mobile */
+.nav.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Position it below the header */
+  right: 0;
+  background-color: #2a2a2a;
+  width: 100%;
+}
+
+/* ===== Desktop-Specific Styles ===== */
 @media (min-width: 992px) {
+  .main-nav .nav {
+    /* Show the main nav as a flex container on desktop */
+    display: flex !important; /* Use !important to override the mobile rule */
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .main-nav .nav li a {
+    color: #fff;
+  }
+  
+  .main-nav .nav li.has-sub ul.sub-menu {
+    top: 100%;
+  }
+
+  /* Hide the mobile trigger button on desktop */
   .menu-trigger {
     display: none;
   }

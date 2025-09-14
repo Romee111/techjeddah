@@ -20,7 +20,9 @@ export class ContactComponent {
       name: this.name,
       email: this.email,
       message: this.message,
-      yourFieldOfInterest: this.interest
+      contactNo: this.phone,
+      subject: this.interest
+   
     };
 
     this.contactService.addContact(contactData).subscribe({

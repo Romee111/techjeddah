@@ -8,9 +8,17 @@ const courseSchema = new mongoose.Schema({
     duration: { type: String },
     level: { type: String },
     topics: [String],
+    lessons: [{
+        title: { type: String },
+        content: { type: String },
+        duration: { type: String }
+      }
+    ]
+  ,
     imageUrl: [String],
     price: { type: Number },
     startDate: { type: Date }
+  
   }, { timestamps: true });
   
   const Course = mongoose.model('Course', courseSchema);

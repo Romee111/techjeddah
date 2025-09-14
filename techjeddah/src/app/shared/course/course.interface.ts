@@ -1,6 +1,7 @@
 // src/app/shared/course.interface.ts
 
 export interface Course {
+  lessons: any;
 _id: string;
     
     course: any;

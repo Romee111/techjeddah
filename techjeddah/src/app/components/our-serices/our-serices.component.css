@@ -9,10 +9,14 @@
   .services-row {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: space-a;
+    gap: 10px;
     overflow-x: auto; /* allows scrolling on small screens */
     scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    
   }
   
   .services-row::-webkit-scrollbar {
@@ -68,3 +72,14 @@
     scroll-snap-align: start;
   }
   
+  @media screen and (max-width: 768px) {
+    /* .services-row {
+      flex-direction: column;
+      align-items: center;
+    } */
+  
+    .services .item {
+      margin-bottom: 20px;
+    }
+    
+  }

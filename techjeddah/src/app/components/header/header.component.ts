@@ -6,6 +6,7 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  isMenuOpen = false;
 
   constructor(
     private renderer: Renderer2,
@@ -16,8 +17,10 @@ export class HeaderComponent {
     const menu = this.el.nativeElement.querySelector('.nav');
     if (menu.classList.contains('active')) {
       this.renderer.removeClass(menu, 'active');
+      this.isMenuOpen = true;
     } else {
       this.renderer.addClass(menu, 'active');
+      this.isMenuOpen = false;
     }
   }
 

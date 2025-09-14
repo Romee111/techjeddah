@@ -10,7 +10,7 @@
           </div>
 
           <!-- Navigation Links -->
-          <ul class="nav d-none d-lg-flex">
+          <ul class="nav d-lg-flex" ngClass="" (toggle)="{'active': isMenuOpen}">
             <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
             <li><a routerLink="/meetings" routerLinkActive="active">Meetings</a></li>
             <li><a routerLink="/apply" fragment="apply">Apply Now</a></li>
@@ -28,7 +28,7 @@
           </ul>
 
           <!-- Mobile Trigger -->
-          <a class="menu-trigger d-lg-none" (click)="toggleMenu()"><span>Menu</span></a>
+          <a class="menu-trigger d-lg " (click)="toggleMenu()"><span>Menu</span></a>
         </nav>
       </div>
     </div>

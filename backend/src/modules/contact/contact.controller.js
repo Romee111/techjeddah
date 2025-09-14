@@ -1,8 +1,8 @@
-const contactSchema = require('../../../models/contact.model');
+const Contact = require('../../../models/contact.model');
 
 const getContact = async (req, res) => {
     try {
-        const contact = await contactSchema.find();
+        const contact = await Contact.find();
         res.status(200).json({ contact });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -11,7 +11,7 @@ const getContact = async (req, res) => {
 
 const addContact = async (req, res) => {    
     try {        
-        const contact = await contactSchema.create(req.body);        
+        const contact = await Contact.create(req.body);        
         res.status(200).json({ contact });        
     } catch (error) {
         res.status(500).json({ error: error.message }); 
