@@ -41,27 +41,27 @@ export class TeamComponent implements OnInit, OnDestroy {
       image: 'assets/sohaib.jpg'  ,
       shape: 'square'
     },
-    {
-      name: 'Aneeq Mehmood',
-      title: 'WordPress developer',
-      experience: '2+ years in Machine Learning',
-      image: 'assets/images/placeholder.jpg',
-      shape: 'diamond'
-    },
-    {
-      name: 'Ahmed Mudassir',
-      title: 'Devops Engineer',
-      experience: '2+ years in Product Development',
-      image: 'assets/images/placeholder.jpg',
-      shape: 'circle'
-    },
-    {
-      name: 'Muhammad Mahad',
-      title: 'Django Developer',
-      experience: '2+ years in Server Architecture',
-      image: 'assets/images/placeholder.jpg',
-      shape: 'hexagon'
-    }
+    // {
+    //   name: 'Aneeq Mehmood',
+    //   title: 'WordPress developer',
+    //   experience: '2+ years in Machine Learning',
+    //   image: 'assets/images/placeholder.jpg',
+    //   shape: 'diamond'
+    // },
+    // {
+    //   name: 'Ahmed Mudassir',
+    //   title: 'Devops Engineer',
+    //   experience: '2+ years in Product Development',
+    //   image: 'assets/images/placeholder.jpg',
+    //   shape: 'circle'
+    // },
+    // {
+    //   name: 'Muhammad Mahad',
+    //   title: 'Django Developer',
+    //   experience: '2+ years in Server Architecture',
+    //   image: 'assets/mahad.jpg',
+    //   shape: 'hexagon'
+    // }
   ];
 
   @HostListener('window:resize')
