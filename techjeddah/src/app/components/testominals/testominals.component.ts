@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Testimonial } from 'src/app/shared/testoimonial.interface';
 
 @Component({
@@ -6,11 +6,9 @@ import { Testimonial } from 'src/app/shared/testoimonial.interface';
   templateUrl: './testominals.component.html',
   styleUrls: ['./testominals.component.css']
 })
+export class TestominalsComponent implements OnInit {
 
-
-export class TestominalsComponent {
-
-@Input() testimonials: Testimonial[] = [
+  @Input() testimonials: Testimonial[] = [
     {
       authorName: 'Sohaib Romee',
       role: 'CEO and a ITProfessional',
@@ -29,10 +27,30 @@ export class TestominalsComponent {
       text: 'I learned how to connect frontend with backend in a professional way.',
       image: 'https://via.placeholder.com/100/2563eb/ffffff'
     }
+    
   ];
 
+  currentIndex: number = 0;
 
+  constructor() { }
 
+  ngOnInit(): void {
+    // Optional: Auto-slide every 5 seconds
+    setInterval(() => {
+      this.nextTestimonial();
+    }, 5000);
+  }
 
+  nextTestimonial(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+  }
+
+  prevTestimonial(): void {
+    this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+  }
+
+  goToTestimonial(index: number): void {
+    this.currentIndex = index;
+  }
 
 }

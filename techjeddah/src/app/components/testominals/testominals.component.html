@@ -1,12 +1,50 @@
-<div class="testimonial-container">
-  <div class="testimonial-card" *ngFor="let t of testimonials">
-    <!-- Avatar -->
-    <div class="avatar">
-      <img [src]="t.image" [alt]="t.authorName">
+<section class="testimonial text-center">
+  <div class="container">
+    <div class="heading white-heading">
+      Testimonials
     </div>
+    <div class="testimonial4_indicators testimonial4_control_button">
+      
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item" 
+             *ngFor="let testimonial of testimonials; let i = index"
+             [class.active]="i === currentIndex">
+          <div class="testimonial4_slide">
+            <img [src]="testimonial.image" 
+                 [alt]="testimonial.authorName"
+                 class="img-circle img-responsive" />
+            <p>{{ testimonial.text }}</p>
+            <h4>{{ testimonial.authorName }}</h4>
+            <span class="role-text">{{ testimonial.role }}</span>
+          </div>
+        </div>
+      </div>
 
-    <!-- Content -->
-    <p class="quote">"{{ t.text }}"</p>
-    <p class="author">{{ t.authorName }} <span class="role">— {{ t.role }}</span></p>
+      <!-- Navigation Controls -->
+      <a class="carousel-control-prev" 
+         (click)="prevTestimonial()"
+         role="button"
+         tabindex="0">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" 
+         (click)="nextTestimonial()"
+         role="button"
+         tabindex="0">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+      <!-- Dots Indicators -->
+      <ol class="carousel-indicators">
+        <li *ngFor="let testimonial of testimonials; let i = index"
+            [class.active]="i === currentIndex"
+            (click)="goToTestimonial(i)"
+            role="button"
+            [attr.aria-label]="'Slide ' + (i + 1)">
+        </li>
+      </ol>
+    </div>
   </div>
-</div>
+</section>

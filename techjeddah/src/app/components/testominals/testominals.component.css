@@ -1,44 +1,394 @@
-.testimonial-card {
+/* Heading Styles */
+.heading {
+  text-align: center;
+  color: #454343;
+  font-size: 30px;
+  font-weight: 700;
   position: relative;
-  width: 400px;
-  background: #1e293b; /* dark background */
-  border-radius: 12px;
-  padding: 40px 20px 20px 20px;
-  color: #dbeafe;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-  margin: 20px auto;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+  z-index: 999;
 }
 
-.avatar {
+.white-heading {
+  color: #ffffff;
+}
+
+.heading:after {
+  content: ' ';
   position: absolute;
-  top: -30px;
-  left: 20px;
-  width: 70px;
-  height: 70px;
-  overflow: hidden;
-  border-radius: 50%; /* circular image */
-  border: 3px solid #7c3aed; /* purple border */
+  top: 100%;
+  left: 50%;
+  height: 40px;
+  width: 180px;
+  border-radius: 4px;
+  transform: translateX(-50%);
+  background-color: purple  ;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.avatar img {
+.white-heading:after {
+  background: url('https://i.ibb.co/d7tSD1R/heading-line-white.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.heading span {
+  font-size: 18px;
+  display: block;
+  font-weight: 500;
+}
+
+.white-heading span {
+  color: #ffffff;
+}
+
+/* Testimonial Section */
+.testimonial {
+  min-height: 500px;
+  position: relative;
+  background: url('https://i.ibb.co/PTJDkgb/testimonials.jpg');
+  padding: 80px 20px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial:after {
+  position: absolute;
+  top: 0 !important;
+  left: 0;
+  content: " ";
+  background-size: 100% 100px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100px;
+  float: left;
+  z-index: 99;
 }
 
-.quote {
-  font-size: 1rem;
-  color: #7c3aed; /* purple text */
-  margin-bottom: 12px;
-  font-weight: 600;
+/* Container wrapper for centering */
+.testimonial .container {
+  max-width: 900px;
+  width: 100%;
+  position: relative;
 }
 
-.author {
-  font-size: 0.95rem;
-  color: #cbd5e1;
+/* Carousel Inner */
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: grab;
+  background:whitesmoke;
+  border-radius: 15px;
+  padding: 40px 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
 }
 
-.role {
-  font-size: 0.85rem;
-  color: #94a3b8;
+.carousel-inner:active {
+  cursor: grabbing;
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+/* Testimonial Slide Content */
+.testimonial4_slide {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.testimonial4_slide img {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 136px;
+  height: 136px;
+  margin: auto;
+  display: block;
+  color: purple;
+  font-size: 18px;
+  line-height: 46px;
+  text-align: center;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.testimonial4_slide p {
+  color:purple;
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 40px 0 20px 0;
+}
+
+.testimonial4_slide h4 {
+  color: purple;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.role-text {
+  color: lightpurple;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Navigation Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff;
+  opacity: 1;
+  cursor: pointer;
+  font-weight: 700;
+  overflow: hidden;
+  line-height: 38px;
+  text-shadow: none;
+  border-radius: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  backdrop-filter: blur(5px);
+}
+
+.carousel-control-prev {
+  left: -25px;
+  transform: translateY(-50%);
+}
+
+.carousel-control-next {
+  right: -25px;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  color: #000;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #fff;
+  text-decoration: none;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 20px;
+  height: 20px;
+  background: no-repeat 50%/100% 100%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='m5.25 0-.75.75L3.25 2 4.5 3.25 2 5.75l.75.75L5.25 4 6.5 5.25l.75-.75L5.75 3 7.25.5 6.5-.25 5.25 0z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='m2.75 0 .75.75L4.75 2 3.5 3.25 6 5.75l-.75.75L2.75 4 1.5 5.25l-.75-.75L2.25 3 .75.5 1.5-.25 2.75 0z'/%3e%3c/svg%3e");
+}
+
+/* Indicators (Dots) */
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  height: 20px;
+  padding: 0 5px;
+  text-align: center;
+}
+
+.carousel-indicators li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-clip: padding-box;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #ffffff;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.carousel-indicators::-webkit-scrollbar {
+  height: 3px;
+}
+
+.carousel-indicators::-webkit-scrollbar-thumb {
+  background: #eeeeee;
+  border-radius: 0;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonial {
+    padding: 60px 15px;
+    min-height: 400px;
+  }
+  
+  .carousel-inner {
+    max-width: 90%;
+    padding: 30px 15px;
+  }
+  
+  .testimonial4_slide {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .testimonial4_slide img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .testimonial4_slide p {
+    font-size: 18px;
+    margin: 30px 0 15px 0;
+  }
+  
+  .testimonial4_slide h4 {
+    font-size: 20px;
+  }
+  
+  .carousel-control-prev {
+    left: -20px;
+  }
+  
+  .carousel-control-next {
+    right: -20px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .heading {
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial {
+    padding: 40px 10px;
+    min-height: 350px;
+  }
+  
+  .carousel-inner {
+    max-width: 95%;
+    padding: 25px 10px;
+  }
+  
+  .testimonial4_slide {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .testimonial4_slide img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .testimonial4_slide p {
+    font-size: 16px;
+    margin: 25px 0 15px 0;
+  }
+  
+  .testimonial4_slide h4 {
+    font-size: 18px;
+  }
+  
+  .role-text {
+    font-size: 14px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .carousel-control-prev {
+    left: -15px;
+  }
+  
+  .carousel-control-next {
+    right: -15px;
+  }
+  
+  .heading {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .carousel-indicators {
+    bottom: -30px;
+  }
 }
