@@ -1,0 +1,44 @@
+.testimonial-card {
+  position: relative;
+  width: 400px;
+  background: #1e293b; /* dark background */
+  border-radius: 12px;
+  padding: 40px 20px 20px 20px;
+  color: #dbeafe;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+}
+
+.avatar {
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 50%; /* circular image */
+  border: 3px solid #7c3aed; /* purple border */
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote {
+  font-size: 1rem;
+  color: #7c3aed; /* purple text */
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.author {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.role {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}

@@ -1,1 +1,12 @@
-<p>testominals works!</p>
+<div class="testimonial-container">
+  <div class="testimonial-card" *ngFor="let t of testimonials">
+    <!-- Avatar -->
+    <div class="avatar">
+      <img [src]="t.image" [alt]="t.authorName">
+    </div>
+
+    <!-- Content -->
+    <p class="quote">"{{ t.text }}"</p>
+    <p class="author">{{ t.authorName }} <span class="role">— {{ t.role }}</span></p>
+  </div>
+</div>
