@@ -1,0 +1,20 @@
+<div class="view-course-container">
+  <h2 class="course-title">Course Lessons</h2>
+
+  <!-- If lessons exist -->
+  <div *ngIf="lessons && lessons.length > 0; else noLessons">
+    <ul class="lessons-list">
+      <li *ngFor="let lesson of lessons" class="lesson-item">
+
+        <h3>{{ lesson.title }}</h3>
+        <p>{{ lesson.content }}</p>
+        <small><strong>Duration:</strong> {{ lesson.duration }}</small>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Show message if no lessons -->
+  <ng-template #noLessons>
+    <p class="no-lessons">No lessons available for this course.</p>
+  </ng-template>
+</div>

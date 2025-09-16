@@ -21,44 +21,44 @@ export class TeamComponent implements OnInit, OnDestroy {
 
   teamMembers: TeamMember[] = [
     {
-      name: 'Sohaib',
+      name: 'Sohaib Romee',
       title: 'IT Specialist',
       experience: 'High skill in IT',
-      image: 'assets/images/placeholder.jpg',
+      image: 'assets/CEO.jpg',
       shape: 'circle'
     },
     {
       name: 'Hafsah Khan',
       title: 'Business & Digital Skills Specialist',
       experience: '12+ years in Business & Marketing',
-      image: 'assets/images/placeholder.jpg',
+      image: 'assets/hafsah.jpg',
       shape: 'hexagon'
     },
     {
       name: 'Sohaib Ahmed',
       title: 'Frontend Engineer',
-      experience: '6+ years in React, Angular & Web Dev',
+      experience: '3+ years in React, Angular & Web Dev',
       image: 'assets/images/placeholder.jpg',
       shape: 'square'
     },
     {
       name: 'Aneeq Mehmood',
-      title: 'SEO Expert',
+      title: 'WordPress developer',
       experience: '2+ years in Machine Learning',
       image: 'assets/images/placeholder.jpg',
       shape: 'diamond'
     },
     {
-      name: 'Lena Kim',
-      title: 'Product Manager',
-      experience: '9+ years in Product Development',
+      name: 'Ahmed Mudassir',
+      title: 'Devops Engineer',
+      experience: '2+ years in Product Development',
       image: 'assets/images/placeholder.jpg',
       shape: 'circle'
     },
     {
-      name: 'David Wilson',
-      title: 'Backend Developer',
-      experience: '7+ years in Server Architecture',
+      name: 'Muhammad Mahad',
+      title: 'Django Developer',
+      experience: '2+ years in Server Architecture',
       image: 'assets/images/placeholder.jpg',
       shape: 'hexagon'
     }

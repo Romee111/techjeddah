@@ -28,6 +28,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ViewCourseComponent } from './components/view-course/view-course.component';
 import { A11yModule } from "@angular/cdk/a11y";
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { A11yModule } from "@angular/cdk/a11y";
     MissionComponent,
     TestominalsComponent,
     TeamComponent,
-    ViewCourseComponent
+    ViewCourseComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,

@@ -7,8 +7,8 @@
         <h1 class="animated-text">Tech Jeddah</h1>
         <p class="tagline">Revolutionizing Technical Education in the Middle East</p>
         <div class="hero-cta">
-          <button class="btn-primary">Our Programs</button>
-          <button class="btn-outline">Contact Us</button>
+          <button class="btn-primary" href="https://www.youtube.com/@iTechJeddah">Our Programs</button>
+          <button class="btn-outline" routerLink="/contact">Contact Us</button>
         </div>
       </div>
     </div>
@@ -43,88 +43,96 @@
         <span class="section-tag">About Us</span>
         <h2>Leading the Educational Revolution</h2>
       </div>
-      
-      <div class="about-tabs">
-        <div class="tab-navigation">
-          <button class="tab-btn active" data-tab="mission">Our Mission</button>
-          <button class="tab-btn" data-tab="vision">Our Vision</button>
-          <button class="tab-btn" data-tab="values">Our Values</button>
+       <div class="about-tabs">
+  <div class="tab-navigation">
+    <button 
+      class="tab-btn" 
+      [class.active]="activeTab === 'mission'" 
+      (click)="setActiveTab('mission')">
+      Our Mission
+    </button>
+    <button 
+      class="tab-btn" 
+      [class.active]="activeTab === 'vision'" 
+      (click)="setActiveTab('vision')">
+      Our Vision
+    </button>
+    <button 
+      class="tab-btn" 
+      [class.active]="activeTab === 'values'" 
+      (click)="setActiveTab('values')">
+      Our Values
+    </button>
+  </div>
+
+  <div class="tab-content">
+    <!-- Mission Tab -->
+    <div class="tab-pane" [class.active]="activeTab === 'mission'" id="mission">
+      <div class="tab-inner">
+        <div class="tab-text">
+          <h3>Empowering Through Education</h3>
+          <p>At Tech Jeddah, we're on a mission to transform technical education by bridging academic knowledge with practical industry skills...</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Hands-on learning experiences</li>
+            <li><i class="fas fa-check-circle"></i> Industry-aligned curriculum</li>
+            <li><i class="fas fa-check-circle"></i> Expert-led training programs</li>
+          </ul>
         </div>
-        
-        <div class="tab-content">
-          <!-- Mission Tab -->
-          <div class="tab-pane active" id="mission">
-            <div class="tab-inner">
-              <div class="tab-text">
-                <h3>Empowering Through Education</h3>
-                <p>At Tech Jeddah, we're on a mission to transform technical education by bridging academic knowledge with practical industry skills. We believe in creating a dynamic learning environment where innovation thrives and professionals are prepared for tomorrow's challenges.</p>
-                <ul class="feature-list">
-                  <li><i class="fas fa-check-circle"></i> Hands-on learning experiences</li>
-                  <li><i class="fas fa-check-circle"></i> Industry-aligned curriculum</li>
-                  <li><i class="fas fa-check-circle"></i> Expert-led training programs</li>
-                </ul>
-              </div>
-              <div class="tab-image">
-                <img src="../../../assets/mission-image.jpg" alt="Our Mission">
-              </div>
-            </div>
+        <div class="tab-image">
+          <img src="../../../assets/miisonitj.png" alt="Our Mission">
+        </div>
+      </div>
+    </div>
+
+    <!-- Vision Tab -->
+    <div class="tab-pane" [class.active]="activeTab === 'vision'" id="vision">
+      <div class="tab-inner">
+        <div class="tab-text">
+          <h3>Shaping Tomorrow's Technology Leaders</h3>
+          <p>We envision Tech Jeddah as the premier destination for technical education in the Middle East and beyond...</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Global community of learners</li>
+            <li><i class="fas fa-check-circle"></i> Continuous improvement</li>
+            <li><i class="fas fa-check-circle"></i> Innovative teaching methods</li>
+          </ul>
+        </div>
+        <div class="tab-image">
+          <img src="../../../assets/vision.png" alt="Our Vision">
+        </div>
+      </div>
+    </div>
+
+    <!-- Values Tab -->
+    <div class="tab-pane" [class.active]="activeTab === 'values'" id="values">
+      <div class="tab-inner">
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h4>Excellence</h4>
+            <p>Commitment to the highest standards in everything we do.</p>
           </div>
-          
-          <!-- Vision Tab (Initially Hidden) -->
-          <div class="tab-pane" id="vision">
-            <div class="tab-inner">
-              <div class="tab-text">
-                <h3>Shaping Tomorrow's Technology Leaders</h3>
-                <p>We envision Tech Jeddah as the premier destination for technical education in the Middle East and beyond. Our aim is to be recognized globally for excellence in teaching, innovation, and creating a community of lifelong learners who lead technological advancement.</p>
-                <ul class="feature-list">
-                  <li><i class="fas fa-check-circle"></i> Global community of learners</li>
-                  <li><i class="fas fa-check-circle"></i> Continuous improvement</li>
-                  <li><i class="fas fa-check-circle"></i> Innovative teaching methods</li>
-                </ul>
-              </div>
-              <div class="tab-image">
-                <img src="../../../assets/vision-image.jpg" alt="Our Vision">
-              </div>
-            </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+            <h4>Collaboration</h4>
+            <p>Building partnerships that create impactful learning experiences.</p>
           </div>
-          
-          <!-- Values Tab (Initially Hidden) -->
-          <div class="tab-pane" id="values">
-            <div class="tab-inner">
-              <div class="values-grid">
-                <div class="value-item">
-                  <div class="value-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                  </div>
-                  <h4>Excellence</h4>
-                  <p>Commitment to the highest standards in everything we do.</p>
-                </div>
-                <div class="value-item">
-                  <div class="value-icon">
-                    <i class="fas fa-handshake"></i>
-                  </div>
-                  <h4>Collaboration</h4>
-                  <p>Building partnerships that create impactful learning experiences.</p>
-                </div>
-                <div class="value-item">
-                  <div class="value-icon">
-                    <i class="fas fa-lightbulb"></i>
-                  </div>
-                  <h4>Innovation</h4>
-                  <p>Embracing new approaches that transform education.</p>
-                </div>
-                <div class="value-item">
-                  <div class="value-icon">
-                    <i class="fas fa-globe"></i>
-                  </div>
-                  <h4>Global Perspective</h4>
-                  <p>Bringing diverse voices together to enrich learning.</p>
-                </div>
-              </div>
-            </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+            <h4>Innovation</h4>
+            <p>Embracing new approaches that transform education.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-globe"></i></div>
+            <h4>Global Perspective</h4>
+            <p>Bringing diverse voices together to enrich learning.</p>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+ 
+     
     </div>
   </section>
 

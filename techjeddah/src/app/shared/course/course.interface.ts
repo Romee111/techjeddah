@@ -1,7 +1,7 @@
 // src/app/shared/course.interface.ts
 
 export interface Course {
-  lessons: any;
+  
 _id: string;
     
     course: any;
@@ -22,6 +22,8 @@ _id: string;
     experience: string;
     icon: string;
     instructorLinkedId: string;
+    lessons: string;
+  
   
   }
   

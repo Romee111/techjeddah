@@ -9,6 +9,7 @@ import { CoursedetailComponent } from './components/coursedetail/coursedetail.co
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ViewCourseComponent } from './components/view-course/view-course.component';
 import { TeamComponent } from './components/team/team.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 const routes: Routes = [
   { path: '',  component:HomeComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'coursedetail/:id', component: CoursedetailComponent },
   {path:'about-us', component: AboutusComponent},
   {path:'view-course/:id', component: ViewCourseComponent},
-  {path:'team', component: TeamComponent}
+  {path:'team', component: TeamComponent},
+  {path:'faq', component: FaqComponent}
 
 
 ];

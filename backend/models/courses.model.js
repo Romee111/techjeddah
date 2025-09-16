@@ -9,7 +9,7 @@ const courseSchema = new mongoose.Schema({
     level: { type: String },
     topics: [String],
     lessons: [{
-        title: { type: String },
+        minititle: { type: String },
         content: { type: String },
         duration: { type: String }
       }

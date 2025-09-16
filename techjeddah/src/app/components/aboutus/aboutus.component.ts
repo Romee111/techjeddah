@@ -6,18 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./aboutus.component.css']
 })
 export class AboutusComponent {
-   feauturedPrograms = [
-     {
-       title: 'Web Development',
-       description: 'Learn the basics of web development and build responsive and interactive websites.',
-       icon: 'fas fa-code'
-     },
-     {  
-       title: 'Digital Marketing',
-       description: 'Master the art of digital marketing and optimize your online presence for success.',
-       icon: 'fas fa-bullhorn' ,
-     }, 
-   ]
+  activeTab: string = 'mission'; // Default tab
+
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
+
+  feauturedPrograms = [
+    {
+      title: 'Web Development',
+      description: 'Learn the basics of web development and build responsive and interactive websites.',
+      icon: 'fas fa-code'
+    },
+    {  
+      title: 'Digital Marketing',
+      description: 'Master the art of digital marketing and optimize your online presence for success.',
+      icon: 'fas fa-bullhorn',
+    }, 
+  ];
 
   milestones = [
     {
@@ -41,6 +47,4 @@ export class AboutusComponent {
       description: 'Received the Educational Innovation Award for our virtual conference technology.'
     }
   ];
-
-
 }

@@ -1,8 +1,13 @@
-/* ===== General Styles ===== */
-/* These styles apply to all screen sizes */
-.nav-logo {
-  height: 60px;
-  margin-right: 1rem;
+/* ===== General Header ===== */
+.header-area {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.5s ease;
+  padding: 10px 0;
 }
 
 .logo-tech {
@@ -15,41 +20,20 @@
   text-decoration: none;
 }
 
-.header-area {
-  background-color: black;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: all 0.5s ease;
-  padding: 10px 0;
-}
-
-.background-header {
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
-
-.background-header .main-nav .nav li a,
-.background-header .main-nav .logo-tech {
-  color: #000 !important;
-}
-
-.main-nav .nav {
+/* ===== Navigation ===== */
+.nav {
   margin: 0;
   padding: 0;
   list-style: none;
-  /* Resetting flex properties that might be set elsewhere */
-  display: block; 
+  display: none; /* hidden by default (mobile) */
 }
 
-.main-nav .nav li {
+.nav li {
   padding: 0 15px;
   position: relative;
 }
 
-.main-nav .nav li a {
+.nav li a {
   display: block;
   font-weight: 500;
   font-size: 14px;
@@ -59,12 +43,12 @@
   transition: all 0.3s ease;
 }
 
-.main-nav .nav li:hover a,
-.main-nav .nav li a.active {
+.nav li:hover a,
+.nav li a.active {
   color: #610094;
 }
 
-/* ===== Dropdown Menu ===== */
+/* ===== Dropdown ===== */
 .nav li.has-sub ul.sub-menu {
   position: absolute;
   top: 100%;
@@ -97,15 +81,7 @@
   padding-left: 25px;
 }
 
-/* ===== Mobile-Specific Styles ===== */
-
-/* Hide the main nav by default on mobile */
-.main-nav .nav {
-  display: none;
-  /* Add mobile menu styling here if needed */
-}
-
-/* Make the trigger button visible on mobile */
+/* ===== Mobile Menu ===== */
 .menu-trigger {
   display: block;
   cursor: pointer;
@@ -116,35 +92,26 @@
   border: none;
 }
 
-/* Show the menu when the 'active' class is present on mobile */
+/* When menu is toggled open */
 .nav.active {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 100%; /* Position it below the header */
-  right: 0;
   background-color: #2a2a2a;
   width: 100%;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 999;
 }
 
-/* ===== Desktop-Specific Styles ===== */
+/* ===== Desktop Styles ===== */
 @media (min-width: 992px) {
-  .main-nav .nav {
-    /* Show the main nav as a flex container on desktop */
-    display: flex !important; /* Use !important to override the mobile rule */
+  .nav {
+    display: flex !important;
     flex-direction: row;
     align-items: center;
   }
-  
-  .main-nav .nav li a {
-    color: #fff;
-  }
-  
-  .main-nav .nav li.has-sub ul.sub-menu {
-    top: 100%;
-  }
 
-  /* Hide the mobile trigger button on desktop */
   .menu-trigger {
     display: none;
   }

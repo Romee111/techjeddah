@@ -14,14 +14,16 @@ export class HeaderComponent {
   ) {}
 
   toggleMenu() {
-    const menu = this.el.nativeElement.querySelector('.nav');
-    if (menu.classList.contains('active')) {
-      this.renderer.removeClass(menu, 'active');
-      this.isMenuOpen = true;
-    } else {
-      this.renderer.addClass(menu, 'active');
-      this.isMenuOpen = false;
-    }
+    // const menu = this.el.nativeElement.querySelector('.nav');
+    // if (menu.classList.contains('active')) {
+    //   this.renderer.removeClass(menu, 'active');
+    //   this.isMenuOpen = false;
+    // } else {
+    //   this.renderer.addClass(menu, 'active');
+    //   this.isMenuOpen = true;
+    // }
+    this.isMenuOpen = !this.isMenuOpen;
+    console.log('open', this.isMenuOpen)
   }
 
 }

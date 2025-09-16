@@ -23,6 +23,9 @@ router
 .route('/getCourse/:id')    
 .get(couseController.getCourseById);
 
+router
+.route('/updateCourse/:id') 
+.put(couseController.updateCourse);
 
 
 router
