@@ -38,7 +38,7 @@ export class TeamComponent implements OnInit, OnDestroy {
       name: 'Sohaib Ahmed',
       title: 'Frontend Engineer',
       experience: '3+ years in React, Angular & Web Dev',
-      image: 'assets/images/placeholder.jpg',
+      image: 'assets/sohaib.jpg'  ,
       shape: 'square'
     },
     {

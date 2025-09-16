@@ -16,16 +16,16 @@ export class TestominalsComponent implements OnInit {
       image: '../assets/CEO.jpg'
     },
     {
-      authorName: 'Sara Ahmed',
-      role: 'UI Designer',
-      text: 'The tutorials are clear, modern, and easy to understand!',
-      image: 'https://via.placeholder.com/100/7c3aed/ffffff'
+      authorName: 'Hafsah Khan',
+      role: 'Business &  Digital development Specialist',
+      text: 'I believe in continuous learning and development to stay ahead of the curve.',
+      image: '../assets/hafsah.jpg'
     },
     {
-      authorName: 'Usman Tariq',
-      role: 'Backend Engineer',
-      text: 'I learned how to connect frontend with backend in a professional way.',
-      image: 'https://via.placeholder.com/100/2563eb/ffffff'
+      authorName: 'Sohaib Ahmed',
+      role: 'Software Engineer',
+      text: 'I aim to make a positive impact in the world through my work at TechJeddah .',
+      image: '../assets/sohaib.jpg'
     }
     
   ];
