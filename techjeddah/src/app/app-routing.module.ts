@@ -10,6 +10,8 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ViewCourseComponent } from './components/view-course/view-course.component';
 import { TeamComponent } from './components/team/team.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
 
 const routes: Routes = [
   { path: '',  component:HomeComponent },
@@ -21,6 +23,8 @@ const routes: Routes = [
   {path:'about-us', component: AboutusComponent},
   {path:'view-course/:id', component: ViewCourseComponent},
   {path:'team', component: TeamComponent},
+  {path:'terms', component: TermsComponent},
+  {path:'privacy', component: PrivacypolicyComponent},
   {path:'faq', component: FaqComponent}
 
 

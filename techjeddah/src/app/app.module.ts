@@ -29,6 +29,8 @@ import { CommonModule } from '@angular/common';
 import { ViewCourseComponent } from './components/view-course/view-course.component';
 import { A11yModule } from "@angular/cdk/a11y";
 import { FaqComponent } from './components/faq/faq.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { FaqComponent } from './components/faq/faq.component';
     TestominalsComponent,
     TeamComponent,
     ViewCourseComponent,
-    FaqComponent
+    FaqComponent,
+    TermsComponent,
+    PrivacypolicyComponent
   ],
   imports: [
     BrowserModule,

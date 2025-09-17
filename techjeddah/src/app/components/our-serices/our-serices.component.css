@@ -72,14 +72,27 @@
     scroll-snap-align: start;
   }
   
-  @media screen and (max-width: 768px) {
-    /* .services-row {
-      flex-direction: column;
-      align-items: center;
-    } */
+  /* @media screen and (max-width: 768px) {
+    .services-row {
+      grid-template-rows: (repeat(auto-fill, minmax(500px, 1fr)));
+    }
   
     .services .item {
       margin-bottom: 20px;
     }
-    
+     */
+  @media screen and (max-width: 768px) {
+  .services-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
+
+  .services .item {
+    flex: 0 0 100%; /* each card takes full width */
+    max-width: 100%; /* make sure it spans the screen */
+    scroll-snap-align: center;
+    margin-right: 10px; /* small spacing between cards */
+  }
+}
