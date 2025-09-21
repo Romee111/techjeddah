@@ -18,7 +18,10 @@
   <!-- Right Section: Contact Form -->
   <div class="contact-form-section">
     <h2>Send Us a Message</h2>
-    <form (submit)="sendEmail(); $event.preventDefault()">
+     <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <form (submit)="sendEmail() ; $event.preventDefault()"  #contactForm="ngForm">
       <input type="text" [(ngModel)]="name" name="name" placeholder="Your Name" required />
       <input type="email" [(ngModel)]="email" name="email" placeholder="Your Email" required />
       <input type="text" [(ngModel)]="phone" name="phone" placeholder="Your Phone" required />

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ContactService {
-  private BaseUrl = 'http://localhost:8000/contact/addContact';
+  private BaseUrl = 'https://techjeddah-bmat.vercel.app/contact/addContact';
 
   constructor(private http: HttpClient) {}
 

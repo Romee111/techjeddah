@@ -12,6 +12,8 @@ export class ContactComponent {
   phone = '';
   interest = '';
   message = '';
+  successMessage = ''; // for frontend success feedback
+  errorMessage = '';   // for frontend error feedback
 
   constructor(private contactService: ContactService) {}
 
@@ -19,19 +21,25 @@ export class ContactComponent {
     const contactData = {
       name: this.name,
       email: this.email,
-      message: this.message,
       contactNo: this.phone,
-      subject: this.interest
-   
+      subject: this.interest,
+      message: this.message
     };
 
     this.contactService.addContact(contactData).subscribe({
       next: (res: any) => {
-        alert('Message sent successfully');
-        this.name = this.email = this.phone = this.interest = this.message = '';
+        this.successMessage = 'Message sent successfully!';
+        this.errorMessage = '';
+        // Reset form fields
+        this.name = '';
+        this.email = '';
+        this.phone = '';
+        this.interest = '';
+        this.message = '';
       },
       error: (err) => {
-        alert('Failed to send message.');
+        this.errorMessage = 'Failed to send message. Please try again later.';
+        this.successMessage = '';
         console.error(err);
       }
     });
