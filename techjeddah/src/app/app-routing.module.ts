@@ -16,7 +16,8 @@ import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy
 const routes: Routes = [
   { path: '',  component:HomeComponent },
   { path: 'meetings',  component:MeetingDetailsComponent },
-  { path: 'courses',  component:CoursesComponent },
+  { path: 'courses',
+      component:CoursesComponent },
   { path: 'apply',  component:ApplyNowComponent },
   { path: 'contact',  component:ContactComponent },
   {path: 'coursedetail/:id', component: CoursedetailComponent },
