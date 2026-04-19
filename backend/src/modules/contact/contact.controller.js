@@ -24,63 +24,47 @@ const getContact = async (req, res) => {
 // Add a new contact message
 const addContact = async (req, res) => {
   try {
-    // 1. Save contact data in MongoDB
     const contact = await Contact.create(req.body);
 
-    // 2. Configure Nodemailer transporter
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,     // your Gmail
-        pass: process.env.EMAIL_PASS          // Gmail App Password
-      },
-    });
+    const canSendEmail =
+      process.env.EMAIL_USER &&
+      process.env.EMAIL_PASS &&
+      process.env.EMAIL_ADMIN &&
+      process.env.EMAIL_FROM;
 
-    // 3. Email to Admin (you)
-    let adminMailOptions = {
-      from: contact.email,
-      to: 'yourEmail@gmail.com', // where you receive contact messages
-      subject: `📩 New Contact Message from ${contact.name}`,
-      text: `
-You received a new message:
+    if (canSendEmail) {
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
 
-Name: ${contact.name}
-Email: ${contact.email}
-Contact No: ${contact.contactNo || 'N/A'}
-Subject: ${contact.subject || 'No subject'}
-Message: ${contact.message}
+      const adminMailOptions = {
+        from: process.env.EMAIL_FROM,
+        to: process.env.EMAIL_ADMIN,
+        subject: `📩 New Contact Message from ${contact.name}`,
+        text: `You received a new message:\n\nName: ${contact.name}\nEmail: ${contact.email}\nContact No: ${contact.contactNo || 'N/A'}\nSubject: ${contact.subject || 'No subject'}\nMessage: ${contact.message}\n\nSubmitted at: ${contact.createdAt}`,
+      };
 
-Submitted at: ${contact.createdAt}
-      `
-    };
+      await transporter.sendMail(adminMailOptions);
 
-    await transporter.sendMail(adminMailOptions);
+      const userMailOptions = {
+        from: process.env.EMAIL_FROM,
+        to: contact.email,
+        subject: '✅ We received your message',
+        text: `Hello ${contact.name},\n\nThank you for reaching out to us. We have received your message and will get back to you soon.\n\nYour Message:\n"${contact.message}"\n\nBest Regards,\nTechJeddah Team`,
+      };
 
-    // 4. Auto-reply email to the user
-    let userMailOptions = {
-      from: 'yourEmail@gmail.com',
-      to: contact.email,
-      subject: '✅ We received your message',
-      text: `
-Hello ${contact.name},
+      await transporter.sendMail(userMailOptions);
+    }
 
-Thank you for reaching out to us. 
-We have received your message and will get back to you soon.
-
-Your Message:
-"${contact.message}"
-
-Best Regards,
-Your Company Team
-      `
-    };
-
-    await transporter.sendMail(userMailOptions);
-
-    // 5. Send success response
-    res.status(200).json({
-      message: 'Contact saved and emails sent successfully!',
-      contact
+    res.status(201).json({
+      message: canSendEmail
+        ? 'Contact saved and email notifications sent successfully.'
+        : 'Contact saved. Email delivery was skipped because SMTP credentials are not configured.',
+      contact,
     });
 
   } catch (error) {

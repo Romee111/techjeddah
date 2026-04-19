@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from '../../shared/course/course.interface';
 import { CourseService } from 'src/app/shared/course.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-coursedetail',
@@ -12,8 +13,8 @@ export class CoursedetailComponent {
   course!: Course | undefined;
   isLoading = true;
   errorMsg: string | null = null;
-instruct_type: any;
-baseUrl:string = 'https://techjeddah-bmat.vercel.app/course';
+  instruct_type: any;
+  apiUrl: string = environment.apiUrl;
 
   constructor(
     private route: ActivatedRoute,

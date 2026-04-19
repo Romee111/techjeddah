@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CourseService } from 'src/app/shared/course.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class CoursesComponent implements OnInit {
   courses: any[] = [];
   showAllCourses = false;
-   baseUrl = 'https://techjeddah-bmat.vercel.app/course';
+  apiUrl = environment.apiUrl;
 
   constructor(
     private http: HttpClient,
@@ -19,7 +20,7 @@ export class CoursesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.courseService.getCourses('_id').subscribe((data) => {
+    this.courseService.getCourses().subscribe((data) => {
       this.courses = data.allcourse;
     });
   }
